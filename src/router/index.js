@@ -6,36 +6,36 @@ import ContactView from "@/views/ContactView.vue";
 import LoginView from "@/views/LoginView.vue";
 import RegisterView from "@/views/RegisterView.vue";
 
-const router=createRouter({
-    history:createWebHistory(),
-    routes:[
+const router = createRouter({
+    history: createWebHistory(),
+    routes: [
         {
-            path:"/",
-            name:"home",
-            component:HomeView
-            
-        },{
-            path:"/",
-            name:"books",
-            component:BooksView
-            
+            path: "/",
+            name: "home",
+            component: HomeView
+
+        }, {
+            path: "/books",
+            name: "books",
+            component: BooksView
+
         },
         {
-            path:"/",
-            name:"contact",
-            component:ContactView
-            
+            path: "/contact",
+            name: "contact",
+            component: ContactView
+
         },
         {
-            path:"/",
-            name:"login",
-            component:LoginView
-            
+            path: "/login",
+            name: "login",
+            component: LoginView
+
         },
         {
-            path:"/",
-            name:"register",
-            component:RegisterView
+            path: "/register",
+            name: "register",
+            component: RegisterView
         },
     ]
 });
