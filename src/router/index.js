@@ -8,6 +8,7 @@ import RegisterView from "@/views/RegisterViews.vue";
 import ContactView from "@/views/ContactViews.vue";
 
 const router = createRouter({
+<<<<<<< HEAD
   history: createWebHistory(),
   routes: [
     {
@@ -36,6 +37,40 @@ const router = createRouter({
       component: RegisterView,
     },
   ],
+=======
+    history: createWebHistory(),
+    routes: [
+        {
+            path: "/",
+            name: "home",
+            component: HomeView
+
+        }, {
+            path: "/books",
+            name: "books",
+            component: BooksView
+
+        },
+        {
+            path: "/contact",
+            name: "contact",
+            component: ContactView
+
+        },
+        {
+            path: "/login",
+            name: "login",
+            component: LoginView
+
+        },
+        {
+            path: "/register",
+            name: "register",
+            component: RegisterView
+        },
+    ],
+    linkActiveClass:'active-link',
+>>>>>>> 96e804b62cdcf32bed4dd631b2802bea9ee40d46
 });
 
 export default router;
