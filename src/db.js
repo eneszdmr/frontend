@@ -45,7 +45,7 @@ const books = [
       author: "Jane Austen",
       page: 279,
       description: "A classic novel exploring themes of love and social class.",
-      rating: 4.6,
+      rating: 7.6,
       uploadDate: "2023-05-12",
       url:"https://m.media-amazon.com/images/I/91llOxQlscL._SL1500_.jpg"
     },
@@ -65,7 +65,7 @@ const books = [
       author: "Suzanne Collins",
       page: 374,
       description: "A dystopian novel set in a post-apocalyptic world where teenagers fight to the death.",
-      rating: 4.4,
+      rating: 3.4,
       uploadDate: "2023-07-08",
       url:"https://m.media-amazon.com/images/I/81JK51UWPpL._SL1500_.jpg"
     },
@@ -75,7 +75,7 @@ const books = [
       author: "Paulo Coelho",
       page: 197,
       description: "A philosophical novel about a young shepherd's journey to find his personal legend.",
-      rating: 4.6,
+      rating: 8.6,
       uploadDate: "2023-08-15",
       url:"https://m.media-amazon.com/images/I/81+Td7RnIpL._SL1500_.jpg"
     },
@@ -85,7 +85,7 @@ const books = [
       author: "J.K. Rowling",
       page: 309,
       description: "The first book in the Harry Potter series, introducing the wizarding world.",
-      rating: 4.9,
+      rating: 3.9,
       uploadDate: "2023-09-30",
       url:"https://m.media-amazon.com/images/I/71ODaT072wL._SL1500_.jpg"
     },
