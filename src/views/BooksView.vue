@@ -4,7 +4,7 @@
             <SectionHeader title="Books Title "
                 text="this books page. To specify prop validations, you can provide an object with validation requirements to the defineProps() macro, instead of an array of strings. For example:" />
             <BooksList :books="paginatedBook" />
-            <Pagination :currentPage="currentPage" :totalPages="totalPages" />
+            <Pagination :currentPage="currentPage" :totalPages="totalPages" @page-changed="updatePage" />
         </div>
     </section>
 </template>
@@ -30,13 +30,18 @@ export default {
     },
     computed: {
         totalPages() {
-            return Math.ceil(this.books.length / this.books.itemsPerPage)
+            return Math.ceil(this.books.length / this.itemsPerPage)
         },
         paginatedBook() {
             const startindex = (this.currentPage - 1) * this.itemsPerPage;
             const endindex = startindex + this.itemsPerPage;
             return this.books.slice(startindex, endindex);
 
+        }
+    },
+    methods:{
+        updatePage(page){
+            this.currentPage=page;
         }
     }
 
