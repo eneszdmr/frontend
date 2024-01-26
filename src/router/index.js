@@ -1,3 +1,4 @@
+import BookDetailViewVue from "@/views/BookDetailView.vue";
 import BooksViewVue from "@/views/BooksView.vue";
 import ContactViewVue from "@/views/ContactView.vue";
 import HomeViewVue from "@/views/HomeView.vue";
@@ -19,6 +20,11 @@ const router = createRouter({
             name: "books",
             component: BooksViewVue
 
+        },
+        {
+            path:'/books/:id',
+            name:'books-detail',
+            component:BookDetailViewVue
         },
         {
             path: "/contact",
