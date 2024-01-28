@@ -2,8 +2,8 @@
     <section>
         <div class="container">
             <SectionHeader :title="this.book.name" :text="book.author" />
-            <button>Geri Git</button>
-            <div class="row mb-4">
+            <font-awesome-icon icon="arrow-left" size="2xl" class="mb-2" style="cursor: pointer;" @click="goToBackPage"/>
+            <div class="row mb-2">
                 <div class="col-lg-6">
                     <img class="card-img-top" style="width: 500px;" :src="book.url" />
                 </div>
@@ -39,8 +39,8 @@
                                 <div class="d-flex justify-content-between">
                                     <p class="fw-bold fst-italic"> Emile Zola</p>
                                     <div class="d-flex align-items-center">
-                                        <p>Upvote</p>
-                                        <p class="ps-2"><strong>8</strong></p>
+                                        <font-awesome-icon icon="fa-regular fa-thumbs-up" size="xl" />
+                                        <p class="ps-2 mb-0"><strong>8</strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -53,8 +53,8 @@
                                 <div class="d-flex justify-content-between">
                                     <p class="fw-bold fst-italic"> Emile Zola</p>
                                     <div class="d-flex align-items-center">
-                                        <p>Upvote</p>
-                                        <p class="ps-2"><strong>8</strong></p>
+                                        <font-awesome-icon icon="fa-regular fa-thumbs-up" size="xl" />
+                                        <p class="ps-2 mb-0"><strong>8</strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -67,8 +67,8 @@
                                 <div class="d-flex justify-content-between">
                                     <p class="fw-bold fst-italic"> Emile Zola</p>
                                     <div class="d-flex align-items-center">
-                                        <p>Upvote</p>
-                                        <p class="ps-2"><strong>8</strong></p>
+                                        <font-awesome-icon icon="fa-regular fa-thumbs-up" size="xl" />
+                                        <p class="ps-2 mb-0"><strong>8</strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -81,8 +81,8 @@
                                 <div class="d-flex justify-content-between">
                                     <p class="fw-bold fst-italic"> Emile Zola</p>
                                     <div class="d-flex align-items-center">
-                                        <p>Upvote</p>
-                                        <p class="ps-2"><strong>8</strong></p>
+                                        <font-awesome-icon icon="fa-regular fa-thumbs-up" size="xl" />
+                                        <p class="ps-2 mb-0"><strong>8</strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -95,8 +95,8 @@
                                 <div class="d-flex justify-content-between">
                                     <p class="fw-bold fst-italic"> Emile Zola</p>
                                     <div class="d-flex align-items-center">
-                                        <p>Upvote</p>
-                                        <p class="ps-2"><strong>8</strong></p>
+                                        <font-awesome-icon icon="fa-regular fa-thumbs-up" size="xl" />
+                                        <p class="ps-2 mb-0"><strong>8</strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -127,8 +127,12 @@ export default {
 
         const bookId = this.$route.params.id;
         this.book = books.find(item => item.id == parseInt(bookId));
-        console.log("this book");
-        console.log(this.book);
+        
+    },
+    methods:{
+        goToBackPage(){
+       this.$router.push({name:'books'})
+        }
     }
 }
 </script>
