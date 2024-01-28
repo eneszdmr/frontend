@@ -1,6 +1,6 @@
 <template>
     <NavBar />
-    <RouterView/>
+    <RouterView />
 </template>
 
 
@@ -23,5 +23,9 @@ export default {
 html,
 body {
     font-family: 'Mulish', sans-serif;
+}
+
+a {
+    text-decoration: line-through;
 }
 </style>

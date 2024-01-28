@@ -1,21 +1,18 @@
 <template>
     <section>
         <div class="container">
-            <SectionHeader title="Book Detail" text="we declare long prop we declare long prop we declare long prop" />
+            <SectionHeader :title="this.book.name" :text="book.author" />
             <button>Geri Git</button>
             <div class="row mb-4">
                 <div class="col-lg-6">
-                    <img class="card-img-top" style="width: 500px;" src="../../iamge1.jpg" />
+                    <img class="card-img-top" style="width: 500px;" :src="book.url" />
                 </div>
                 <div class="col-lg-6 details-wrapper">
-                    <p class="lead description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, qui impedit error
-                        voluptatum harum quod quisquam fugiat labore. Consequatur, cupiditate? dipisicing elit. Praesentium, qui impedit error
-                        voluptatum harum quod quisquam fugiat labore. Consequatur, cupiditate? dipisicing elit. Praesentium, qui impedit error
-                        voluptatum harum quod quisquam fugiat labore. Consequatur, cupiditate?</p>
+                    <p class="lead description">{{ book.description }}</p>
                     <div class="mb-4">
                         <div class="row border-bottom pb-2">
                             <div class="col-lg-6"><strong>Page</strong> </div>
-                            <div class="col-lg-6">275</div>
+                            <div class="col-lg-6">{{ book.page }}</div>
                         </div>
                         <div class="row border-bottom pb-2">
                             <div class="col-lg-6"><strong>Category</strong> </div>
@@ -24,11 +21,11 @@
 
                         <div class="row border-bottom pb-2">
                             <div class="col-lg-6"><strong>Rating</strong> </div>
-                            <div class="col-lg-6">8.5</div>
+                            <div class="col-lg-6">{{book.rating}}</div>
                         </div>
                         <div class="row border-bottom pb-2">
                             <div class="col-lg-6"><strong>Upload Date</strong> </div>
-                            <div class="col-lg-6">19 jan 2002</div>
+                            <div class="col-lg-6">{{ book.uploadDate }}</div>
                         </div>
 
                     </div>
@@ -113,27 +110,42 @@
 
 <script>
 import SectionHeader from '@/components/SectionHeader.vue';
+import books from '@/db';
 import { Button } from 'bootstrap';
 
 export default {
     name: "BookDetailView",
-    components: { SectionHeader }
+    components: {
+        SectionHeader
+    },
+    data() {
+        return {
+            book: null
+        }
+    },
+    created() {
+
+        const bookId = this.$route.params.id;
+        this.book = books.find(item => item.id == parseInt(bookId));
+        console.log("this book");
+        console.log(this.book);
+    }
 }
 </script>
 
 <style scoped>
-.details-wrapper{
-   max-height: 740px;
-   display: flex;
-   flex-direction: column;
+.details-wrapper {
+    max-height: 740px;
+    display: flex;
+    flex-direction: column;
 }
 
-.comments-section{
+.comments-section {
     flex-grow: 1;
     overflow-y: auto;
 }
 
-.description{
+.description {
     min-height: 150px;
     max-height: 250px;
 
