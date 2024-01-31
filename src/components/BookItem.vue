@@ -42,9 +42,9 @@ export default {
             else
                 return 'bg-danger'
         },
-        truncatedBox(){
-            if (this.book.description.length>80) {
-                return this.book.description.slice(0,80) + "...";
+        truncatedBox() {
+            if (this.book.description.length > 80) {
+                return this.book.description.slice(0, 80) + "...";
             }
             return this.book.description;
         }
@@ -53,10 +53,13 @@ export default {
 </script>
 
 <style  scoped>
-.card-text{
-min-height: 70px;
+.card-text {
+    min-height: 70px;
 }
-.card-img-top{
+
+.card-img-top {
     max-height: 400px;
 }
+
+
 </style>
