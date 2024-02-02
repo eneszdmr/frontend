@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="container">
-            <form class="mt-5">
+            <form class="mt-5" @submit.prevent="submitForm">
                 <div class="row justify-content-center">
                     <!-- Username Field (Medium and Larger Screens) -->
                     <div class="col-md-6 col-8 mb-3">
@@ -31,64 +31,6 @@
                     </div>
                 </div>
 
-                <!-- Gender Field -->
-                <div class="row justify-content-center">
-                    <div class="col-md-6 col-8 mb-3">
-                        <h5>Gender</h5>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" value='male' v-model="formData.gender" id="male">
-                            <label class="form-check-label" for="male">
-                                Male
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" value='female' v-model="formData.gender" id="female">
-                            <label class="form-check-label" for="female">
-                                Female
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Age Field -->
-                <div class="row justify-content-center">
-                    <div class="col-md-6 col-8 mb-3">
-                        <label for="age" class="form-label">Age:</label>
-                        <input type="number" class="form-control" id="age" required>
-                    </div>
-                </div>
-
-                <!-- Programming Field -->
-                <div class="row justify-content-center">
-                    <div class="col-md-6 col-8 mb-3">
-                        <h5>Which Programming Language(s) you know?</h5>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="java" id="java">
-                            <label class="form-check-label" for="java">
-                                Java
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="c++" id="c++">
-                            <label class="form-check-label" for="c++">
-                                C++
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="python" id="python">
-                            <label class="form-check-label" for="python">
-                                Python
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="rust" id="rust">
-                            <label class="form-check-label" for="rust">
-                                Rust
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
 
                 <!-- Submit Button -->
                 <div class="row justify-content-center">
@@ -110,8 +52,7 @@ export default {
             formData:{
                 username:'',
                 email:'',
-                password:'',
-                gender:''
+                password:''
             }
         }
     },
@@ -119,6 +60,10 @@ export default {
         SectionHeader
     },
     methods:{
+        submitForm(){
+            
+            console.log(this.formData);
+        }
 
     }
 }
